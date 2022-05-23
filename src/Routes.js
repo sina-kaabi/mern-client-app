@@ -5,15 +5,12 @@ import Create from './Create';
 
 const Routes = () => {
     return (
-    <BrowserRouter>
-        
-        <Switch>
-            <Route path="/" exact component={App} />
-            <Route path="/Create" exact component={Create} />
-            
-        </Switch>
-        
-    </BrowserRouter>
+        <BrowserRouter>
+            <Switch>
+                <Route path="/" exact component={App} />
+                <Route path="/create" exact component={Create} />
+            </Switch>
+        </BrowserRouter>
     );
 };
 
