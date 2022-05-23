@@ -4,14 +4,15 @@ import axios from 'axios';
 import { JsonWebTokenError } from 'jsonwebtoken';
 
 const App = () => {
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState([]);
 
     const fetchPosts = () => {
         axios.get(`${process.env.REACT_APP_API}/posts`)
         .then((response) => {
+           // console.log(response);
             setPosts(response.data);
         })
-        .catch();
+        .catch(error => alert('Error fetching posts'));
     };
 
       useEffect(() => {
@@ -24,7 +25,21 @@ return(
         <div className="container pb-5">
             <Nav />
             <br />
-            <h1>MERN CRUD</h1>
+            <h1>MERN APP</h1>
+            <hr />
+            {
+                posts.map((post, i) => (
+                    <div className="row" key={post._id} style={{borderBottom: '1px solid silver'}}>
+                    <div className="col pt-3.pb-2">
+                        <h2>{post.title}</h2>
+                        <p className="lead">{post.content.substring(0, 100)}</p>
+
+                        <p>Author <span className="badge">{post.user}</span> Published on{' '}
+                        <span className="badge">{new Date(post.createdAt).toLocaleString()}</span></p>
+                        </div>
+                    </div>
+                ))
+            }
         </div>
     );
 };
