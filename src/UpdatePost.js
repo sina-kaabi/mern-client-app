@@ -3,22 +3,22 @@ import axios from 'axios';
 import Nav from './Nav';
 
 
-const UpdatePost = (props) => {
+const UpdatePost = props => {
     const[state, setState] = useState({
         title: '',
         content: '',
         slug: '',
         user: '',
 
-    })
+    });
 
-    const {title, content, slug, user} = state;
+    const { title, content, slug, user} = state;
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/post/${props.match.params.slug}`)
         .then(response => {
-            const {title, content, slug, user} = response.data
-            setState({...state, title, content, slug, user})
+            const {title, content, slug, user} = response.data;
+            setState({ ...state, title, content, slug, user});
     })
         .catch(error => alert('Error loading single post'));
     }, []);
@@ -36,7 +36,7 @@ const UpdatePost = (props) => {
             .put(`${process.env.REACT_APP_API}/post/${slug}`, { title, content, user })
             .then(response => {
                 console.log(response);
-                const {title, content, slug, user} = response.data;
+                const { title, content, slug, user } = response.data;
                 // empty state
                 setState({ ...state, title, content, slug, user });
                 // show sucess alert
@@ -87,14 +87,13 @@ const UpdatePost = (props) => {
             <button className="btn btn-primary">Update</button>
         </div>
     </form>
-    )
+    );
 
     return (
         <div className="container pb-5">
         <Nav />
         <br />
         <h1 className="update-title">UPDATE POST</h1>
-        
         {showUpdateForm()}
     </div>
     );
