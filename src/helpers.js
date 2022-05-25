@@ -34,7 +34,7 @@ export const getToken = () => {
 export const getUser = () => {
     if ( window !== 'undefined') {
        // console.log('authenticate', response);
-       if(sessionStorage.getItem('user')) {
+       if (sessionStorage.getItem('user')) {
 
         return  JSON.parse(sessionStorage.getItem('user'));
        } else {
@@ -48,7 +48,7 @@ export const getUser = () => {
 // remove token from session storage
 
 export const logout = next => {
-    if( window !== 'undefined') {
+    if ( window !== 'undefined') {
        // console.log('authenticate', response);
         sessionStorage.removeItem('token');
         sessionStorage.removeItem('user');

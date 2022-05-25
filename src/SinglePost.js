@@ -3,7 +3,7 @@ import axios from 'axios';
 import Nav from './Nav';
 
 
-const SinglePost = (props) => {
+const SinglePost = props => {
     const [post, setPost] = useState('');
 
     useEffect(() => {
@@ -11,6 +11,7 @@ const SinglePost = (props) => {
         .then(response => setPost(response.data))
         .catch(error => alert('Error loading single post'));
     }, []);
+
 
     return (
         <div className="container pb-5">

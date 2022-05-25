@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import {getUser, logout } from './helpers';
+import { getUser, logout } from './helpers';
 
-const Nav = (history) => (
+const Nav = ({ history }) => (
     <nav>
         <ul className="nav nav-tabs">
             <li className="nav-item pr-3 pt-3 pb-3">
@@ -21,7 +21,7 @@ const Nav = (history) => (
             {getUser() && (  
              <li onClick={() => logout(() => history.push('/'))} 
              className="nav-item ml-auto pr-3 pt-3 pb-3"
-             style={{cursor: 'pointer' }}
+             style={{ cursor: 'pointer' }}
              >
                 Logout
              </li>  
