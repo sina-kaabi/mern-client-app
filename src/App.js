@@ -41,7 +41,7 @@ return (
         <div className="container pb-5">
             <Nav />
             <br />
-            <h1>MERN APP</h1>
+            <h1 className="titleName">POSTBOX</h1>
             <hr />
             { posts.map((post, i) => (
                     <div className="row" key={post._id} style={{ borderBottom: '1px solid silver' }}>

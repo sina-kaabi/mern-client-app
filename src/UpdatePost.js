@@ -93,7 +93,7 @@ const UpdatePost = (props) => {
         <div className="container pb-5">
         <Nav />
         <br />
-        <h1>UPDATE POST</h1>
+        <h1 className="update-title">UPDATE POST</h1>
         
         {showUpdateForm()}
     </div>
