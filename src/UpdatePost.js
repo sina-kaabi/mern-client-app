@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 import Nav from './Nav';
 
@@ -8,7 +8,7 @@ const UpdatePost = props => {
         title: '',
         content: '',
         slug: '',
-        user: '',
+        user: ''
 
     });
 
