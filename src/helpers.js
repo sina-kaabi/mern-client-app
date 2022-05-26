@@ -17,7 +17,7 @@ export const authenticate = (response, next) => {
 export const getToken = () => {
     if ( window !== 'undefined') {
        // console.log('authenticate', response);
-       if(sessionStorage.getItem('token')) {
+       if (sessionStorage.getItem('token')) {
 
         return  JSON.parse(sessionStorage.getItem('token'));
        } else {
@@ -29,7 +29,7 @@ export const getToken = () => {
 };
 
 
-// access username from session storage
+// access user name from session storage
 
 export const getUser = () => {
     if ( window !== 'undefined') {

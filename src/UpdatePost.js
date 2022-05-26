@@ -4,7 +4,7 @@ import Nav from './Nav';
 
 
 const UpdatePost = props => {
-    const[state, setState] = useState({
+    const [state, setState] = useState({
         title: '',
         content: '',
         slug: '',
@@ -17,8 +17,8 @@ const UpdatePost = props => {
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_API}/post/${props.match.params.slug}`)
         .then(response => {
-            const {title, content, slug, user} = response.data;
-            setState({ ...state, title, content, slug, user});
+            const { title, content, slug, user } = response.data;
+            setState({ ...state, title, content, slug, user });
     })
         .catch(error => alert('Error loading single post'));
     }, []);
@@ -39,7 +39,7 @@ const UpdatePost = props => {
                 const { title, content, slug, user } = response.data;
                 // empty state
                 setState({ ...state, title, content, slug, user });
-                // show sucess alert
+                // show success alert
                 alert(`Post titled ${title} is updated successfully`);
             })
             .catch(error => {
